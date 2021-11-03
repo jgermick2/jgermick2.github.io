@@ -1,0 +1,8 @@
+- name: Welcome
+  link: /
+- name: Feed
+  link: /secret/Feed.html
+- name: Recipes
+  link: /RecipeBook.html
+- name: Calendar
+  link: /Calendar.html

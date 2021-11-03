@@ -1,0 +1,20 @@
+<nav>
+
+
+  <div class="header">
+    <div id="Site-Name">
+      <a> Germick Family Portal </a> 
+
+    </div>
+    <div id="Nav-Bar">
+    {% for item in site.data.navigation %}
+
+      <a class="NavLinks" href="{{ item.link }}" {% if page.url == item.link %}class="current"{% endif %}>{{ item.name }}</a>
+
+    {% endfor %}
+    </div>
+  </div>
+
+
+
+</nav>

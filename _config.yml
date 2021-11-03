@@ -1,0 +1,23 @@
+collections:
+  authors:
+    output: true
+  recipe:
+    output: true
+  secret:
+    output: true
+
+defaults:
+  - scope:
+      path: ""
+      type: "recipe"
+    values:
+      layout: "recipe"
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+  - scope:
+      path: ""
+      type: "secret"
+    values:
+      layout: "secret"
