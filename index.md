@@ -3,20 +3,149 @@ layout: default
 title: Welcome
 ---
 
-#Welcome
 
-This website is intended to connect us outside of Social Media.
+<div Class="TitleHeader">
 
-I have a few ideas on some pages, right now it is only a simple static site. All running from my home computer
 
-- a Recipe Book that is easy to post to by Syncing to a google folder
-	(in progress)
-	-> if this is all I ending doing it might still be usefull
+<form action="/index.html" method="get">
+  <label for="search-box">Search</label>
+  <input type="text" id="search-box" name="query">
+  <input type="submit" value="search">
+</form>
+</div>
+<div class="wrap">Welcome <span class="wrapper">[?]<span class="tooltip">I am a tooltip!</span>
+  </span>
+</div>
 
-- Perhaps a Calender to keep track of events?
+<div Class="TitleHeader">
+<h1>Search Results</h1>
+</div>
+<div Class="TitleHeader">
+<ul id="search-results"></ul>
+</div>
+<div Class="TitleHeader">
+ <h1>Recipe Categories</h1>
+</div>
 
-- A Blog like feed so we can post life updates 	
-	( Perhaps involve some people who don't use Social Media)
+{% assign Category = '' | split: ',' %}
+  {% for recipe in site.recipe %}
+    {% for c in recipe.category %}
+      {% if Category contains c %}
+      {% else %}
+      {% assign Category = c | concat: Category %}
+      {% endif %}
+    {% endfor %}
+  {% endfor %}
 
-- try logging clicking the feed link 
-- user: admin, password: password
+{% assign Category = Category | sort %}
+
+
+<div class="Category" >
+{% for c in Category %}
+  
+<button onclick="ListHide('{{c}}')" id="myBtn{{c}}" value=1> {{c}} </button>
+
+{% endfor %}
+</div>
+
+
+
+{% for c in Category %}
+  <ul id="List">
+
+  <span id="dots{{c}}"></span>
+  <span id= "more{{c}}">
+
+  {% for recipe in site.recipe %}
+    {% if recipe.category contains c %}
+    <li>
+    <a class="ListLinks" href="{{ recipe.url }}">{{ recipe.name }}</a>
+    </li>
+    {% endif %}
+  {% endfor %}
+  </span>
+
+  </ul>
+{% endfor %}
+
+<ul id="List">
+</ul>
+
+
+<script>
+
+  window.store = {
+    {% for recipe in site.recipe %}
+      "{{ recipe.url | slugify }}": {
+        "name": "{{ recipe.name | xml_escape }}",
+        "category": "{{ recipe.category | xml_escape }}",
+        "content": "",
+        "url": "{{ recipe.url | xml_escape }}"
+      }
+      {% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  };
+
+
+
+function ListHide(name) {
+  var dots = document.getElementById("dots"+name);
+  var moreText = document.getElementById("more"+name);
+  var btnText = document.getElementById("myBtn"+name);
+  var state = document.getElementById("myBtn"+name).value;
+
+  if (state == 1){
+    Button_Reset(name)
+    document.getElementById("myBtn"+name).value = 0
+  } else{
+
+    document.getElementById("myBtn"+name).value = 1
+  }
+
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    btnText.innerHTML = name; 
+    moreText.style.display = "none";
+  } else {
+    //reset
+    dots.style.display = "none";
+    btnText.innerHTML =  name; 
+    moreText.style.display = "inline";
+  }
+
+
+}
+
+function Button_Reset(name){
+  var children = document.body.getElementsByTagName("*");
+
+  var elements = [], child;
+  for (var i = 0, length = children.length; i < length; i++) {
+    child = children[i];
+    if ( child.id && child.id.indexOf("myBtn") ==0){
+      child.value = 1;
+    }
+    if ( child.id && child.id.indexOf("dots") ==0){
+      child.style.display = "inline" ;
+    }
+    if ( child.id && child.id.indexOf("more") ==0){
+      child.style.display = "none" ;
+    }
+
+  }
+
+} 
+
+function getInputValue() {
+  // Selecting the input element and get its value 
+  let inputVal = document.getElementById("inputId").value;
+  //document.getElementById("SearchResults").innerHTML = inputVal;
+
+
+}
+
+
+
+</script>
+<script src="/assets/js/lunr.min.js"></script>
+<script src="/assets/js/search.js"></script>
