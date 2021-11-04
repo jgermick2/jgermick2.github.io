@@ -13,7 +13,7 @@
 
 .ListLinks {
   color: #00ccff;
-  font-size: 18px;
+  font-size: 24px;
 }
 
 a:visted {
@@ -22,7 +22,7 @@ a:visted {
 
 body {
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-  font-size: 18px;
+  font-size: 24px;
   line-height: 1.5;
   color: #ffffff;
   background-color: #000000
@@ -98,6 +98,15 @@ span[id*="dots"] {
   padding: 0px;
   border: 0px;
 }
+#search-results{
+  text-align: center;
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  font-size: 16px;
+}
+
+
 .Category{
   text-align: center;
   margin-left: 20px;
@@ -141,16 +150,20 @@ span[id*="dots"] {
 
 @media (min-width: 40em) {
   #List { column-count: 2 ;}
+
 }
 
 @media (min-width: 60em) {
   #List { column-count: 3 ;}
+  #search-results { column-count: 3 ;}
 }
 @media (min-width: 75em) {
   #List { column-count: 4 ;}
+  #search-results { column-count: 4 ;}
 }
 @media (min-width: 90em) {
   #List { column-count: 5 ;}
+  #search-results { column-count: 5 ;}
 }
 
 @media print {
