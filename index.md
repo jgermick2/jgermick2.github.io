@@ -4,7 +4,7 @@ title: Welcome
 ---
 
 
-<div Class="TitleHeader">
+<section id="page">
 
 
 <form action="/index.html" method="get">
@@ -12,20 +12,19 @@ title: Welcome
   <input type="text" id="search-box" name="query">
   <input type="submit" value="search">
 </form>
-</div>
-<div class="wrap">Welcome <span class="wrapper">[?]<span class="tooltip">I am a tooltip!</span>
-  </span>
-</div>
 
-<div Class="TitleHeader">
+
+ <div class="wrap">Welcome <span class="wrapper">[?]<span class="tooltip">I am a tooltip!</span>
+ </span>
+</div>
 <h1>Search Results</h1>
-</div>
-<div Class="TitleHeader">
+
 <ul id="search-results"></ul>
-</div>
-<div Class="TitleHeader">
- <h1>Recipe Categories</h1>
-</div>
+
+<h2>Recipe Categories</h2>
+</section>
+
+
 
 {% assign Category = '' | split: ',' %}
   {% for recipe in site.recipe %}
