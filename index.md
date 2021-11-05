@@ -13,7 +13,7 @@ title: Welcome
 </form>
 
 
- <div class="wrap"> Hint <span class="wrapper">[?]<span class="tooltip"> default search is OR, use + to require, use - to exclude . Example: "+apple -chicken" searches for apple not chicken</span>
+ <div class="wrap"> Hint <span class="wrapper">[?]<span class="tooltip"> default search is OR, use + to require, use - to exclude . Example: "+apple -chicken" searches for apple not chicken. Also seems to only search file names :( </span>
  </span>
 </div>
 <h1>Search Results</h1>
