@@ -24,7 +24,7 @@ title: Welcome
 
 <ul>
   <li>Submissions need to be as a .txt or .md file. </li>
-  <li>Do not submit a word doc, save file as .txt or .md </li>
+  <li>Do not submit a word doc, save file as .txt or .md, file names should not have spaces. For example chicken soup should be saved as chicken_soup.txt </li>
   <li> One image is allowed, save image as .jpeg, .jpg, or .png. Be sure that file name matches as written in the text file </li>
   <li> the formatting is very particular, do not add extra spaces. The ingredient and step list can be as long as desired.
   </li> 
