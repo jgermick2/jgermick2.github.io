@@ -2,7 +2,17 @@
 .current {
   background-color: #00f75f;
 }
+input {
+  background-color: #ffffff;
+}
 
+u {
+  color: red;
+}
+pre {
+  background-color: #29293d;
+  padding: 2em;
+}
 
 // section grid
 #page {
@@ -50,6 +60,11 @@ a:visted {
   color: gray;
 }
 
+#general-text{
+  padding: 12px;
+  
+}
+
 body {
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
   font-size: 1.5em;
@@ -58,29 +73,30 @@ body {
   background-color: #000000
 }
 
-
+button[id*="myBtn"]{
+  text-align: center;
+  margin-left: .5em;
+  margin-right: .5em;
+  font-size: 1.25em;
+}
 
 
 // Nav Bar
 .NavLinks {
   color: #1a1aff;
-  font-size: .5em;
+  font-size: 1em;
 }
 
-.header{  
-  overflow: hidden;
-  background-color: #C1C1C1;
-  padding: 20px 10px;
-}
+
 #Site-Name{
   text-align: left;
     color: #1a1aff;
   font-size: 1.25em;
 }
-#Nav-Bar{
+#Nav-Bar , .header{
   text-align: right;
   background-color: #C1C1C1;
-
+  overflow: hidden;
   padding: 12px;
   text-decoration: none;
   font-size: 1.25em
@@ -119,12 +135,11 @@ span[id*="dots"] {
 }
 
 
-
 button[id*="myBtn"]{
   text-align: center;
   margin-left: .5em;
-  margin-left: .5em;
-    font-size: 1.25em;
+  margin-right: .5em;
+  font-size: 1.25em;
 }
 
 #Category button[id*="myBtn"]{
@@ -132,7 +147,6 @@ button[id*="myBtn"]{
   text-align: center;
   color: #fff;
   width: 100%; 
-  height: 100px;
   border-color: #64c4ed;
   background: #64c4ed;
   overflow: hidden !important;
@@ -162,6 +176,7 @@ button[id*="myBtn"]{
   color: black;
 }
 
+// auto columns
 @media (min-width: 50em) {
   #List { column-count: 2 ;}
 }
@@ -204,9 +219,6 @@ button[id*="myBtn"]{
   width: 20em;
 }
 
-
-
-  
 .wrapper:hover .tooltip {
   opacity: 1;
   pointer-events: auto;
