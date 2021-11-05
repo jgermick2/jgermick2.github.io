@@ -8,13 +8,12 @@ title: Welcome
 
 
 <form action="/index.html" method="get">
-  <label for="search-box">Search</label>
   <input type="text" id="search-box" name="query">
-  <input type="submit" value="search">
+  <input type="submit" id="search-box" value="search">
 </form>
 
 
- <div class="wrap">Welcome <span class="wrapper">[?]<span class="tooltip">I am a tooltip!</span>
+ <div class="wrap"> Hint <span class="wrapper">[?]<span class="tooltip"> default search is OR, use + to require, use - to exclude . Example: "+apple -chicken" searches for apple not chicken</span>
  </span>
 </div>
 <h1>Search Results</h1>
@@ -142,7 +141,6 @@ function getInputValue() {
 
 
 }
-
 
 
 </script>

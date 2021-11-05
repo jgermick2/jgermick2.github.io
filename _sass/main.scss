@@ -7,8 +7,7 @@
 // section grid
 #page {
   display: grid;
-  width: 100%;
-  height: 100%;
+
   grid-template-areas: "headl headr"
                        "main  main"
                        "submain  submain"
@@ -16,10 +15,14 @@
 }
 
 #page > form {
-  grid-area: headl;
+  grid-area: headr;
+  font-size: 1.5em;
+}
+#search-box{
+  font-size: 1.25em;
 }
 #page > div {
-  grid-area: headr;
+  grid-area: headl;
 }
 #page > h1 {
   grid-area: main;
@@ -29,9 +32,9 @@
   grid-area: submain;
   text-align: center;
 
-  margin: 0%;
-  padding: 0%;
-  border: 0%;
+  margin: 0em;
+  padding: 0em;
+  border: 0em;
 }
 #page > h2 {
   grid-area: sub2main;
@@ -40,7 +43,7 @@
 
 .ListLinks {
   color: #00ccff;
-  font-size: 1em;
+  font-size: 1.5em;
 }
 
 a:visted {
@@ -49,28 +52,19 @@ a:visted {
 
 body {
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-  font-size: 24px;
+  font-size: 1.5em;
   line-height: 1.5;
   color: #ffffff;
   background-color: #000000
 }
 
 
-code,
-
-pre {
-  font-family: Menlo, Consolas, "Consolas for Powerline", "Courier New", Courier, monospace;
-  background-color: #2b2b2b;
-  color: #fff;
-  padding: 0.25em
-}
-
 
 
 // Nav Bar
 .NavLinks {
   color: #1a1aff;
-  font-size: 32px;
+  font-size: .5em;
 }
 
 .header{  
@@ -81,7 +75,7 @@ pre {
 #Site-Name{
   text-align: left;
     color: #1a1aff;
-  font-size: 32px;
+  font-size: 1.25em;
 }
 #Nav-Bar{
   text-align: right;
@@ -89,9 +83,7 @@ pre {
 
   padding: 12px;
   text-decoration: none;
-  font-size: 18px;
-  line-height: 25px;
-  border-radius: 4px;
+  font-size: 1.25em
 }
 
 #Nav-Bar a:hover {
@@ -120,32 +112,33 @@ span[id*="dots"] {
 
 #List{
   text-align: center;
-  height: 0px;
-  margin: 0px;
-  padding: 0px;
-  border: 0px;
+  height: 0em;
+  margin: 0em;
+  padding: 0em;
+  border: 0em;
 }
 
 
 
-.Category{
+button[id*="myBtn"]{
   text-align: center;
-  margin-left: 20px;
-  margin-left: 20px;
+  margin-left: .5em;
+  margin-left: .5em;
+    font-size: 1.25em;
 }
 
 #Category button[id*="myBtn"]{
-  font-size: 26px;
-  border-radius: 40px;
+  font-size: 1.25em;
+  text-align: center;
   color: #fff;
+  width: 100%; 
+  height: 100px;
   border-color: #64c4ed;
   background: #64c4ed;
-  margin-top: 0.5rem;
   overflow: hidden !important;
   display: block;
-
   cursor: pointer;
-  padding: 10px 24px; /* Some padding */
+  padding: 1.5em 1.5em; /* Some padding */
   // float: left; /* Float the buttons side by side */
 
 } 
@@ -169,12 +162,10 @@ span[id*="dots"] {
   color: black;
 }
 
-@media (min-width: 40em) {
+@media (min-width: 50em) {
   #List { column-count: 2 ;}
-
 }
-
-@media (min-width: 60em) {
+@media (min-width: 65em) {
   #List { column-count: 3 ;}
   #search-results { column-count: 3 ;}
 }
@@ -182,17 +173,50 @@ span[id*="dots"] {
   #List { column-count: 4 ;}
   #search-results { column-count: 4 ;}
 }
-@media (min-width: 90em) {
+@media (min-width: 95em) {
   #List { column-count: 5 ;}
   #search-results { column-count: 5 ;}
 }
 
-@media print {
-  a[href] {
-    text-decoration: none ;
-    color: black ;
-  }
+
+// question mark
+.wrap{
+    margin-top: 5em;
 }
+.wrapper {
+  text-transform: uppercase;
+  cursor: help;
+  position: relative;
+  text-align: center;
+}
+
+.wrapper .tooltip {
+  background: #1496bb;
+  bottom: 100%;
+  color: #fff;
+  display: block;
+  left: 25px;
+  margin-bottom: 15px;
+  opacity: 0;
+  padding: 10px;
+  pointer-events: none;
+  position: absolute;
+  width: 20em;
+}
+
+
+
+  
+.wrapper:hover .tooltip {
+  opacity: 1;
+  pointer-events: auto;
+  -webkit-transform: translateY(0px);
+     -moz-transform: translateY(0px);
+      -ms-transform: translateY(0px);
+       -o-transform: translateY(0px);
+          transform: translateY(0px);
+}
+
 
 //
 
