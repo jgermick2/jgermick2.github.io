@@ -19,11 +19,11 @@ Mom taught me to make a cross in the batter before baking.
 ## Ingredients
 
 - 3 cups flour 
-- 1/3 cup sugar
+- 1 & 1/3 cup sugar
 - 1 tbsp baking powder 
 - 1 tsp baking soda
 - 1 tsp salt
-- 1 egg
+- 2 egg
 - 2 cups buttermilk
 - 1 tbsp caraway seeds
 - 1 cup raisins & 1 tbsp flour 
