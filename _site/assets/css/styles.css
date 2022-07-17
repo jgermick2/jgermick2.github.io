@@ -66,10 +66,3 @@ button[id*="myBtn"] { text-align: center; margin-left: .5em; margin-right: .5em;
   #search-results { column-count: 4; } }
 @media (min-width: 95em) { #List { column-count: 5; }
   #search-results { column-count: 5; } }
-.wrap { margin-top: 5em; }
-
-.wrapper { text-transform: uppercase; cursor: help; position: relative; text-align: center; }
-
-.wrapper .tooltip { background: #1496bb; bottom: 100%; color: #fff; display: block; left: 25px; margin-bottom: 15px; opacity: 0; padding: 10px; pointer-events: none; position: absolute; width: 20em; }
-
-.wrapper:hover .tooltip { opacity: 1; pointer-events: auto; -webkit-transform: translateY(0px); -moz-transform: translateY(0px); -ms-transform: translateY(0px); -o-transform: translateY(0px); transform: translateY(0px); }
